@@ -1,3 +1,8 @@
-*.class
+venv
 *.pyc
-*.pyo
+.settings
+staticfiles
+honeymoons/moons.db
+honeymoons/media
+*.project
+*.pydevproject

@@ -8,5 +8,3 @@ django-tinymce
 django-suit
 pillow
 South
-django-storages
-newrelic

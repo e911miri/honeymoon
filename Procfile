@@ -1,1 +1,1 @@
-web: web: gunicorn honeymoons.wsgi
+web: gunicorn honeymoons.wsgi

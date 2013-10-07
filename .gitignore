@@ -2,7 +2,7 @@ venv
 *.pyc
 .settings
 staticfiles
-honeymoons/moons.db
+oons.sqlite
 honeymoons/media
 *.project
 *.pydevproject

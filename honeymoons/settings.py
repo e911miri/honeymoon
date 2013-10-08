@@ -1,5 +1,9 @@
 # Django settings for honeymoons project.
+import os
+import dj_database_url
 
+
+PROJECT_DIR = os.path.dirname(__file__)
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -113,6 +117,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_DIR, "templates")
 )
 
 INSTALLED_APPS = (
@@ -128,6 +133,11 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
+
+SUIT_CONFIG = {
+    'ADMIN_NAME': 'Tropic Dreams Honeymoons',
+    'MENU_EXCLUDE': ('auth.group', 'auth'),
+}
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
@@ -159,7 +169,7 @@ LOGGING = {
 }
 
 # Parse database configuration from $DATABASE_URL
-import dj_database_url
+
 DATABASES['default'] =  dj_database_url.config()
 DATABASES['default'] = dj_database_url.parse("sqlite:moons.sqlite")
 
@@ -170,7 +180,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
 
 # Static asset configuration
-import os
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
